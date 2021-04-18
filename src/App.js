@@ -12,7 +12,9 @@ export default function App() {
       className={`App h-screen w-screen flex items-start justify-center font-poppins font-bold tracking-wide bg-gradient-to-br from-gray-900 ${mainBg}`}
     >
       <div>
-        <div className={"flex justify-center space-x-10 mt-12 sm:mt-24"}>
+        <div
+          className={"flex justify-center space-x-10 mt-12 sm:mt-24 opacity-60"}
+        >
           <a href={"https://github.com/moishinetzer/"}>
             <img src={github} alt="GitHub Link" className={"h-12 sm:h-20"} />
           </a>
