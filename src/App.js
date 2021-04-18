@@ -29,10 +29,10 @@ export default function App() {
             <img src={gmail} alt="Gmail Link" className={"h-12 sm:h-20"} />
           </a>
         </div>
-        <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 w-screen text-4xl sm:text-7xl mt-16 sm:mt-32">
+        <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 w-screen text-4xl sm:text-7xl mt-16 sm:mt-20">
           Moishi Netzer
         </p>
-        <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 italic text-2xl sm:text-5xl p-10 sm:p-16 font-normal">
+        <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 italic text-2xl sm:text-5xl p-10 sm:p-12 font-normal">
           In Development
         </p>
         <div className="flex flex-col items-center sm:flex-row sm:justify-around sm:px-40">
