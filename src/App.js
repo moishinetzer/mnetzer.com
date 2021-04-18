@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import "./styles.css";
-import github from "../public/github.png";
-import linkedin from "../public/linkedin.png";
-import gmail from "../public/gmail.png";
+import github from "./github.png";
+import linkedin from "./linkedin.png";
+import gmail from "./gmail.png";
 
 export default function App() {
   var [mainBg, setMainBg] = useState("to-gray-700");
