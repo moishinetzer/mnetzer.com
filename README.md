@@ -14,4 +14,4 @@ https://coderstape.com/series/13-learn-tailwind-css-from-scratch
 
 Progression:
 
-![Website Progression](https://imgur.com/zJDfjMU)
+![Website Progression](https://raw.githubusercontent.com/moishinetzer/mnetzer.com/main/webiste%20progression.png)
