@@ -5,6 +5,20 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DL9PQTK88V"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DL9PQTK88V");
+    </script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="icon" href="/logo.png" />
     <meta charset="UTF-8" />
