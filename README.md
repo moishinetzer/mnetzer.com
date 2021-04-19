@@ -11,3 +11,7 @@ https://tailwindcss.com/
 I learned it using the following course which I highly recommend
 
 https://coderstape.com/series/13-learn-tailwind-css-from-scratch
+
+Progression:
+
+![Website Progression](https://imgur.com/zJDfjMU)
