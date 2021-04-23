@@ -5,6 +5,7 @@ import linkedin from "./linkedin.png";
 import gmail from "./gmail.png";
 import LogoLink from "./LogoLink";
 import BgButton from "./BgButton";
+import ClearButton from "./ClearButton";
 
 export default function App() {
   var [mainBg, setMainBg] = useState("to-gray-700");
@@ -82,12 +83,8 @@ export default function App() {
               setBgFunction={setMainBg}
             />
           </div>
-          <button
-            className="sm:w-1/5 sm:h-10 sm:w-1/6 m-2 p-1 w-1/5 border-2 rounded-full border-gray-100 border-opacity-20 text-gray-200 tracking-wide m-4 focus:outline-none hover:opacity-60 transition-opacity duration-300"
-            onClick={() => setMainBg("to-gray-700")}
-          >
-            CLEAR
-          </button>
+
+          <ClearButton setBgFunction={setMainBg} />
         </div>
       </div>
     </>
