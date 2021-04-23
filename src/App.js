@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Transition } from "@headlessui/react";
 import "./styles.css";
 import github from "./github.png";
 import linkedin from "./linkedin.png";
@@ -8,17 +9,33 @@ import BgButton from "./BgButton";
 import ClearButton from "./ClearButton";
 
 export default function App() {
-  var [mainBg, setMainBg] = useState("to-gray-700");
-  var [secondBg, setSecondBg] = useState("");
-  var [currentBg, setCurrentBg] = useState("main");
+  // @ts#5328-check
+  var [firstBg, setFirstBg] = useState("to-gray-700");
+  var [secondBg, setSecondBg] = useState("to-gray-700");
+  var [currentBg, setCurrentBg] = useState("first");
+
+  var bgFunctions = { setFirstBg, setSecondBg, currentBg, setCurrentBg };
 
   return (
     <>
       {/* Backgrounds to be transitioned between */}
-      <div className={`absolute inset-0 bg-red-500 w-screen h-screen`}> </div>
       <div
-        className={`absolute inset-0 w-screen h-screen bg-gradient-to-br from-gray-900 ${mainBg}`}
+        className={`absolute inset-0 w-screen h-screen bg-gradient-to-br from-gray-900 ${secondBg}`}
       ></div>
+
+      <Transition
+        show={currentBg === "first" ? true : false}
+        enter="transition-opacity duration-700"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-700"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div
+          className={`absolute inset-0 w-screen h-screen bg-gradient-to-br from-gray-900 ${firstBg}`}
+        ></div>
+      </Transition>
 
       {/* Start of content */}
       <div
@@ -58,33 +75,33 @@ export default function App() {
               text="RED"
               textColor="red-200"
               borderColor="red-300"
-              bgColor="to-red-900"
-              setBgFunction={setMainBg}
+              bgColor="to-red-700"
+              setFunctions={bgFunctions}
             />
             <BgButton
               text="GREEN"
               textColor="green-200"
               borderColor="green-300"
-              bgColor="to-green-900"
-              setBgFunction={setMainBg}
+              bgColor="to-green-700"
+              setFunctions={bgFunctions}
             />
             <BgButton
               text="BLUE"
               textColor="blue-200"
               borderColor="blue-300"
-              bgColor="to-blue-900"
-              setBgFunction={setMainBg}
+              bgColor="to-blue-700"
+              setFunctions={bgFunctions}
             />
             <BgButton
               text="YELLOW"
               textColor="yellow-200"
               borderColor="yellow-300"
-              bgColor="to-yellow-900"
-              setBgFunction={setMainBg}
+              bgColor="to-yellow-700"
+              setFunctions={bgFunctions}
             />
           </div>
 
-          <ClearButton setBgFunction={setMainBg} />
+          <ClearButton setFunctions={bgFunctions} />
         </div>
       </div>
     </>
