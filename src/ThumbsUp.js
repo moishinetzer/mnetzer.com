@@ -1,6 +1,10 @@
 export default function ThumbsUp(props) {
   return (
-    <div>
+    <div
+      onClick={() => {
+        console.log("CLICK");
+      }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="

@@ -40,7 +40,7 @@ export default function App() {
 
       {/* Start of content */}
       <div
-        className={`App h-screen w-screen flex absolute items-start justify-center font-poppins font-bold tracking-wide `}
+        className={`App h-screen w-screen flex absolute items-start justify-center font-poppins font-bold tracking-wide select-none`}
       >
         <div>
           {/* Header logos */}
@@ -63,7 +63,7 @@ export default function App() {
           </div>
 
           {/* Center words */}
-          <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 text-4xl sm:text-7xl mt-16 sm:mt-20">
+          <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 text-4xl sm:text-7xl mt-16 sm:mt-20 select-text">
             Moishi Netzer
           </p>
           <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-40 italic text-2xl sm:text-5xl p-10 sm:p-12 font-normal">
