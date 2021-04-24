@@ -107,7 +107,7 @@ export default function App() {
                 text="YELLOW"
                 textColor="yellow-200"
                 borderColor="yellow-300"
-                bgColor="to-yellow-800"
+                bgColor="to-yellow-600"
                 setFunctions={bgFunctions}
               />
               <ThumbsUp />
