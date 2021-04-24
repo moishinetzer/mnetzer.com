@@ -66,23 +66,23 @@ export default function App() {
           <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 text-4xl sm:text-7xl mt-16 sm:mt-20">
             Moishi Netzer
           </p>
-          <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 italic text-2xl sm:text-5xl p-10 sm:p-12 font-normal">
+          <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-40 italic text-2xl sm:text-5xl p-10 sm:p-12 font-normal">
             In Development
           </p>
 
           {/* Buttons */}
           <div className="flex flex-col items-center sm:flex-row sm:px-20 lg:px-52 sm:w-screen sm:gap-x-6">
-            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 border">
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
                 text="RED"
                 textColor="red-200"
                 borderColor="red-300"
-                bgColor="to-red-700"
+                bgColor="to-red-800"
                 setFunctions={bgFunctions}
               />
               <ThumbsUp />
             </div>
-            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 border">
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
                 text="GREEN"
                 textColor="green-200"
@@ -92,29 +92,31 @@ export default function App() {
               />
               <ThumbsUp />
             </div>
-            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 border">
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
                 text="BLUE"
                 textColor="blue-200"
                 borderColor="blue-300"
-                bgColor="to-blue-700"
+                bgColor="to-blue-900"
                 setFunctions={bgFunctions}
               />
               <ThumbsUp />
             </div>
-            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 border">
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
                 text="YELLOW"
                 textColor="yellow-200"
                 borderColor="yellow-300"
-                bgColor="to-yellow-700"
+                bgColor="to-yellow-800"
                 setFunctions={bgFunctions}
               />
               <ThumbsUp />
             </div>
           </div>
 
-          <ClearButton setFunctions={bgFunctions} />
+          <div className="">
+            <ClearButton setFunctions={bgFunctions} />
+          </div>
         </div>
       </div>
     </>

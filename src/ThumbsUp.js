@@ -4,8 +4,8 @@ export default function ThumbsUp(props) {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="
-          h-9 w-9 sm:h-10 sm:w-10 stroke-current text-gray-400 transition-opacity
-          duration-150 ease-out hover:opacity-60 cursor-pointer"
+          h-8 w-8 sm:h-10 sm:w-10 stroke-current text-gray-400 transition-opacity
+          duration-150 ease-out hover:opacity-60 cursor-pointer pb-1"
         fill="none"
         viewBox="0 0 24 24"
         stroke=""
