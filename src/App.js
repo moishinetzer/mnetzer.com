@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import "./styles.css";
 import github from "./github.png";
@@ -7,14 +7,29 @@ import gmail from "./gmail.png";
 import LogoLink from "./LogoLink";
 import BgButton from "./BgButton";
 import ClearButton from "./ClearButton";
+import ThumbsUp from "./ThumbsUp";
+import firebase from "firebase";
 
 export default function App() {
   // @ts#5328-check
+
+  // State
   var [firstBg, setFirstBg] = useState("to-gray-700");
   var [secondBg, setSecondBg] = useState("to-gray-700");
   var [currentBg, setCurrentBg] = useState("first");
+  var [canVote, setCanVote] = useState(true);
 
   var bgFunctions = { setFirstBg, setSecondBg, currentBg, setCurrentBg };
+
+  var auth = firebase.auth();
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      setCanVote(false);
+    } else {
+      auth.signInAnonymously();
+    }
+  }, [auth]);
 
   return (
     <>
@@ -39,7 +54,7 @@ export default function App() {
 
       {/* Start of content */}
       <div
-        className={`App h-screen w-screen flex absolute items-start justify-center font-poppins font-bold tracking-wide `}
+        className={`App h-screen w-screen flex absolute items-start justify-center font-poppins font-bold tracking-wide select-none`}
       >
         <div>
           {/* Header logos */}
@@ -62,46 +77,72 @@ export default function App() {
           </div>
 
           {/* Center words */}
-          <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 w-screen text-4xl sm:text-7xl mt-16 sm:mt-20">
+          <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 text-4xl sm:text-7xl mt-16 sm:mt-20 select-text">
             Moishi Netzer
           </p>
-          <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 italic text-2xl sm:text-5xl p-10 sm:p-12 font-normal">
+          <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-40 italic text-2xl sm:text-5xl p-10 sm:p-12 font-normal">
             In Development
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col items-center sm:flex-row sm:justify-around sm:px-40">
-            <BgButton
-              text="RED"
-              textColor="red-200"
-              borderColor="red-300"
-              bgColor="to-red-700"
-              setFunctions={bgFunctions}
-            />
-            <BgButton
-              text="GREEN"
-              textColor="green-200"
-              borderColor="green-300"
-              bgColor="to-green-700"
-              setFunctions={bgFunctions}
-            />
-            <BgButton
-              text="BLUE"
-              textColor="blue-200"
-              borderColor="blue-300"
-              bgColor="to-blue-700"
-              setFunctions={bgFunctions}
-            />
-            <BgButton
-              text="YELLOW"
-              textColor="yellow-200"
-              borderColor="yellow-300"
-              bgColor="to-yellow-700"
-              setFunctions={bgFunctions}
-            />
+          <div className="flex flex-col gap-y-2 items-center sm:flex-row sm:px-20 lg:px-52 sm:w-screen sm:gap-x-6">
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
+              <BgButton
+                text="RED"
+                textColor="red-200"
+                borderColor="red-300"
+                bgColor="to-red-800"
+                setFunctions={bgFunctions}
+              />
+              <ThumbsUp
+                color="red"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
+            </div>
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
+              <BgButton
+                text="GREEN"
+                textColor="green-200"
+                borderColor="green-300"
+                bgColor="to-green-700"
+                setFunctions={bgFunctions}
+              />
+              <ThumbsUp
+                color="green"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
+            </div>
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
+              <BgButton
+                text="BLUE"
+                textColor="blue-200"
+                borderColor="blue-300"
+                bgColor="to-blue-900"
+                setFunctions={bgFunctions}
+              />
+              <ThumbsUp
+                color="blue"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
+            </div>
+            <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
+              <BgButton
+                text="YELLOW"
+                textColor="yellow-200"
+                borderColor="yellow-300"
+                bgColor="to-yellow-600"
+                setFunctions={bgFunctions}
+              />
+              <ThumbsUp
+                color="yellow"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
+            </div>
           </div>
 
-          <ClearButton setFunctions={bgFunctions} />
+          <div className="">
+            <ClearButton setFunctions={bgFunctions} />
+          </div>
         </div>
       </div>
     </>
