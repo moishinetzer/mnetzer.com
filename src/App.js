@@ -8,9 +8,12 @@ import LogoLink from "./LogoLink";
 import BgButton from "./BgButton";
 import ClearButton from "./ClearButton";
 import ThumbsUp from "./ThumbsUp";
+import firebase from "firebase";
 
 export default function App() {
   // @ts#5328-check
+  firebase.auth().signInAnonymously();
+  // State
   var [firstBg, setFirstBg] = useState("to-gray-700");
   var [secondBg, setSecondBg] = useState("to-gray-700");
   var [currentBg, setCurrentBg] = useState("first");
@@ -80,7 +83,7 @@ export default function App() {
                 bgColor="to-red-800"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp />
+              <ThumbsUp color="red" />
             </div>
             <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
@@ -90,7 +93,7 @@ export default function App() {
                 bgColor="to-green-700"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp />
+              <ThumbsUp color="green" />
             </div>
             <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
@@ -100,7 +103,7 @@ export default function App() {
                 bgColor="to-blue-900"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp />
+              <ThumbsUp color="blue" />
             </div>
             <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
@@ -110,7 +113,7 @@ export default function App() {
                 bgColor="to-yellow-600"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp />
+              <ThumbsUp color="yellow" />
             </div>
           </div>
 

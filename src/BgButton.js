@@ -1,5 +1,5 @@
 export default function BgButton(props) {
-  const { text, textColor, borderColor, bgColor, setFunctions } = props;
+  const { text, textColor, borderColor, bgColor, setFunctions, db } = props;
 
   const { setFirstBg, setSecondBg, currentBg, setCurrentBg } = setFunctions;
 
@@ -18,6 +18,7 @@ export default function BgButton(props) {
         hover:opacity-60 
         `}
       onClick={() => {
+        // Change bg color
         if (currentBg === "first") {
           setSecondBg(bgColor);
           setCurrentBg("second");

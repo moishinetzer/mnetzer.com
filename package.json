@@ -6,7 +6,6 @@
   "main": "src/index.js",
   "dependencies": {
     "@headlessui/react": "1.0.0",
-    "@react-firebase/database": "0.3.11",
     "firebase": "8.4.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
