@@ -87,7 +87,7 @@ export default function App() {
           </p>
           <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-60 font-bold pb-3 sm:text-xl">
             {canVote
-              ? "Try out the colors below what do you like?"
+              ? "Try out all the colors before choosing one"
               : "Thanks for choosing a colour!"}
           </p>
 
