@@ -19,12 +19,14 @@ export default function App() {
   var [currentBg, setCurrentBg] = useState("first");
   var [canVote, setCanVote] = useState(true);
 
+  const colors = ["red", "yellow", "blue", "green"];
+
   var bgFunctions = { setFirstBg, setSecondBg, currentBg, setCurrentBg };
 
   var auth = firebase.auth();
 
   useEffect(() => {
-    if (auth.currentUser || localStorage.mnCanVote === "false") {
+    if (auth.currentUser || colors.includes(localStorage.mnVoteColor)) {
       setCanVote(false);
     } else {
       auth.signInAnonymously();

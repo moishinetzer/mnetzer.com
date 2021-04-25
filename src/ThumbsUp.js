@@ -12,6 +12,12 @@ export default function ThumbsUp(props) {
 
   const chosenColor = "text-" + color + "-400";
 
+  useEffect(() => {
+    if (color === localStorage.mnVoteColor) {
+      setChosen(true);
+    }
+  }, [color]);
+
   thumbsUpDb
     .ref("colors")
     .child(color)
@@ -32,7 +38,7 @@ export default function ThumbsUp(props) {
             .set(firebase.database.ServerValue.increment(1));
           setCanVote(false);
           setChosen(true);
-          localStorage.setItem("mnCanVote", "false");
+          localStorage.setItem("mnVoteColor", color);
         }
       }}
     >
