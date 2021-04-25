@@ -9,7 +9,7 @@ export default function LogoLink(props) {
         ease-out
         duration-150
         hover:opacity-70"
-      onClick={() => {
+      onMouseDown={() => {
         firebase.analytics().logEvent(alt);
       }}
     >

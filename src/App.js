@@ -19,12 +19,12 @@ export default function App() {
   var [currentBg, setCurrentBg] = useState("first");
   var [canVote, setCanVote] = useState(true);
 
-  const colors = ["red", "yellow", "blue", "green"];
   var bgFunctions = { setFirstBg, setSecondBg, currentBg, setCurrentBg };
 
   // Firebase Setups
   var auth = firebase.auth();
   useEffect(() => {
+    const colors = ["red", "yellow", "blue", "green"];
     if (auth.currentUser || colors.includes(localStorage.mnVoteColor)) {
       setCanVote(false);
     } else {
