@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import { thumbsUpDb } from "./thumbsUpDb";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 
 export default function ThumbsUp(props) {
@@ -8,7 +8,7 @@ export default function ThumbsUp(props) {
   const { canVote, setCanVote } = canVoteFunctions;
 
   var [chosen, setChosen] = useState(false);
-  var [count, setCount] = useState(0);
+  var [count, setCount] = useState();
 
   const chosenColor = "text-" + color + "-400";
 
@@ -32,7 +32,7 @@ export default function ThumbsUp(props) {
             .set(firebase.database.ServerValue.increment(1));
           setCanVote(false);
           setChosen(true);
-          localStorage.setItem("mnCanVote", false);
+          localStorage.setItem("mnCanVote", "false");
         }
       }}
     >

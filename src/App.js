@@ -24,7 +24,7 @@ export default function App() {
   var auth = firebase.auth();
 
   useEffect(() => {
-    if (auth.currentUser || !localStorage.mnCanVote) {
+    if (auth.currentUser || localStorage.mnCanVote === "false") {
       setCanVote(false);
     } else {
       auth.signInAnonymously();
