@@ -31,7 +31,6 @@ export default function ThumbsUp(props) {
             .child(color)
             .set(firebase.database.ServerValue.increment(1));
           setCanVote(false);
-          localStorage.setItem("mnCanVote", false);
           setChosen(true);
         }
       }}
