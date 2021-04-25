@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import "./styles.css";
 import github from "./github.png";
@@ -12,13 +12,24 @@ import firebase from "firebase";
 
 export default function App() {
   // @ts#5328-check
-  firebase.auth().signInAnonymously();
+
   // State
   var [firstBg, setFirstBg] = useState("to-gray-700");
   var [secondBg, setSecondBg] = useState("to-gray-700");
   var [currentBg, setCurrentBg] = useState("first");
+  var [canVote, setCanVote] = useState(true);
 
   var bgFunctions = { setFirstBg, setSecondBg, currentBg, setCurrentBg };
+
+  var auth = firebase.auth();
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      setCanVote(false);
+    } else {
+      auth.signInAnonymously();
+    }
+  }, [auth]);
 
   return (
     <>
@@ -74,7 +85,7 @@ export default function App() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col items-center sm:flex-row sm:px-20 lg:px-52 sm:w-screen sm:gap-x-6">
+          <div className="flex flex-col gap-y-2 items-center sm:flex-row sm:px-20 lg:px-52 sm:w-screen sm:gap-x-6">
             <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
                 text="RED"
@@ -83,7 +94,10 @@ export default function App() {
                 bgColor="to-red-800"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp color="red" />
+              <ThumbsUp
+                color="red"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
             </div>
             <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
@@ -93,7 +107,10 @@ export default function App() {
                 bgColor="to-green-700"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp color="green" />
+              <ThumbsUp
+                color="green"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
             </div>
             <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
@@ -103,7 +120,10 @@ export default function App() {
                 bgColor="to-blue-900"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp color="blue" />
+              <ThumbsUp
+                color="blue"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
             </div>
             <div className="flex items-center w-full justify-center pl-12 sm:pl-0 sm:flex-col gap-x-3 ">
               <BgButton
@@ -113,7 +133,10 @@ export default function App() {
                 bgColor="to-yellow-600"
                 setFunctions={bgFunctions}
               />
-              <ThumbsUp color="yellow" />
+              <ThumbsUp
+                color="yellow"
+                canVoteFunctions={{ canVote, setCanVote }}
+              />
             </div>
           </div>
 
