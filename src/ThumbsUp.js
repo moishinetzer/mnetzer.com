@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { thumbsUpDb } from "./thumbsUpDb";
 import { useState } from "react";
 import { Transition } from "@headlessui/react";

@@ -8,7 +8,7 @@ import LogoLink from "./LogoLink";
 import BgButton from "./BgButton";
 import ClearButton from "./ClearButton";
 import ThumbsUp from "./ThumbsUp";
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 export default function App() {
   // @ts#5328-check
