@@ -8,7 +8,9 @@ export default function ThumbsUp(props) {
   const { canVote, setCanVote } = canVoteFunctions;
 
   var [chosen, setChosen] = useState(false);
-  var [count, setCount] = useState();
+  var [count, setCount] = useState(0);
+
+  const chosenColor = "text-" + color + "-400";
 
   thumbsUpDb
     .ref("colors")
@@ -29,6 +31,7 @@ export default function ThumbsUp(props) {
             .child(color)
             .set(firebase.database.ServerValue.increment(1));
           setCanVote(false);
+          localStorage.setItem("mnCanVote", false);
           setChosen(true);
         }
       }}
@@ -36,7 +39,7 @@ export default function ThumbsUp(props) {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`
-          ${chosen ? "text-gray-200" : "text-gray-400"} 
+          ${chosen ? chosenColor : "text-gray-400"} 
           ${canVote && "cursor-pointer hover:opacity-60"} 
           h-8 w-8 sm:h-10 sm:w-10 stroke-current 
           transition-opacity
@@ -54,15 +57,13 @@ export default function ThumbsUp(props) {
         />
       </svg>
       <Transition
-        appear={false}
+        appear={true}
         show={!canVote}
         enter="duration-1000"
         enterFrom="transform scale-0"
         enterTo="transform scale-100"
       >
-        <div
-          className={`${chosen ? "text-gray-200" : "text-gray-400"} sm:text-xl`}
-        >
+        <div className={`${chosen ? chosenColor : "text-gray-400"} sm:text-xl`}>
           {count}
         </div>
       </Transition>

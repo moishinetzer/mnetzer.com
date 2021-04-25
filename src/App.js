@@ -24,7 +24,7 @@ export default function App() {
   var auth = firebase.auth();
 
   useEffect(() => {
-    if (auth.currentUser) {
+    if (auth.currentUser || !localStorage.mnCanVote) {
       setCanVote(false);
     } else {
       auth.signInAnonymously();
@@ -143,6 +143,13 @@ export default function App() {
           <div className="">
             <ClearButton setFunctions={bgFunctions} />
           </div>
+          <>
+            {!canVote && (
+              <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-60 font-bold">
+                Thanks for choosing a colour!
+              </p>
+            )}
+          </>
         </div>
       </div>
     </>
