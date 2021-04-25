@@ -80,8 +80,14 @@ export default function App() {
           <p className="bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-red-400 text-4xl sm:text-7xl mt-16 sm:mt-20 select-text">
             Moishi Netzer
           </p>
-          <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-40 italic text-2xl sm:text-5xl p-10 sm:p-12 font-normal">
+          <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-40 italic text-2xl sm:text-5xl p-7 sm:p-9 font-normal">
             In Development
+          </p>
+
+          <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-60 font-bold pb-3 sm:text-xl">
+            {canVote
+              ? "Try out the colors below what do you like?"
+              : "Thanks for choosing a colour!"}
           </p>
 
           {/* Buttons */}
@@ -143,13 +149,6 @@ export default function App() {
           <div className="">
             <ClearButton setFunctions={bgFunctions} />
           </div>
-          <>
-            {!canVote && (
-              <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-60 font-bold">
-                Thanks for choosing a colour!
-              </p>
-            )}
-          </>
         </div>
       </div>
     </>
