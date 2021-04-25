@@ -20,11 +20,10 @@ export default function App() {
   var [canVote, setCanVote] = useState(true);
 
   const colors = ["red", "yellow", "blue", "green"];
-
   var bgFunctions = { setFirstBg, setSecondBg, currentBg, setCurrentBg };
 
+  // Firebase Setups
   var auth = firebase.auth();
-
   useEffect(() => {
     if (auth.currentUser || colors.includes(localStorage.mnVoteColor)) {
       setCanVote(false);
@@ -86,7 +85,6 @@ export default function App() {
           <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-40 italic text-2xl sm:text-5xl p-7 sm:p-9 font-normal">
             In Development
           </p>
-
           <p className="bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-200 opacity-60 font-bold pb-3 sm:text-xl">
             {canVote
               ? "Try out the colors below what do you like?"
