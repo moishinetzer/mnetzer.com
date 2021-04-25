@@ -30,7 +30,6 @@ export default function App() {
     } else {
       auth.signInAnonymously();
     }
-    firebase.analytics();
   }, [auth]);
 
   return (
