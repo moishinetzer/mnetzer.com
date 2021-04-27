@@ -60,7 +60,7 @@ export default function App() {
       >
         <div>
           {/* Header logos */}
-          <div className="flex justify-center space-x-10 mt-12 sm:mt-24 opacity-60">
+          <div className="flex justify-center space-x-10 mt-12 sm:mt-14 opacity-60">
             <LogoLink
               href="https://github.com/moishinetzer/"
               src={github}
