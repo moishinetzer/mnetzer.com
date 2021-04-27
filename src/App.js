@@ -6,7 +6,6 @@ import linkedin from "./linkedin.png";
 import gmail from "./gmail.png";
 import cv from "./cv.png";
 import LogoLink from "./LogoLink";
-import CVLink from "./CVLink";
 import BgButton from "./BgButton";
 import ClearButton from "./ClearButton";
 import ThumbsUp from "./ThumbsUp";
@@ -77,9 +76,8 @@ export default function App() {
               src={gmail}
               alt="Gmail Link"
             />
-            <CVLink
-              href=""
-              downloadName="MoishiNetzerCV.pdf"
+            <LogoLink
+              href="https://github.com/moishinetzer/mnetzer.com/raw/main/src/MoishiNetzerCV.pdf"
               src={cv}
               alt="CV Download Link"
             />
