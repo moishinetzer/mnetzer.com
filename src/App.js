@@ -4,7 +4,9 @@ import "./styles.css";
 import github from "./github.png";
 import linkedin from "./linkedin.png";
 import gmail from "./gmail.png";
+import cv from "./cv.png";
 import LogoLink from "./LogoLink";
+import CVLink from "./CVLink";
 import BgButton from "./BgButton";
 import ClearButton from "./ClearButton";
 import ThumbsUp from "./ThumbsUp";
@@ -74,6 +76,12 @@ export default function App() {
               href="mailto:moishinetzer@gmail.com"
               src={gmail}
               alt="Gmail Link"
+            />
+            <CVLink
+              href=""
+              downloadName="MoishiNetzerCV.pdf"
+              src={cv}
+              alt="CV Download Link"
             />
           </div>
 
