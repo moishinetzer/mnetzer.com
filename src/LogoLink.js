@@ -10,7 +10,9 @@ export default function LogoLink(props) {
         duration-150
         hover:opacity-70"
       onMouseDown={() => {
+        firebase.analytics();
         firebase.analytics().logEvent(alt);
+        console.log("done");
       }}
     >
       <img src={src} alt={alt} className={"h-12 sm:h-20"} />
