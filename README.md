@@ -1,17 +1,34 @@
-# mnetzer.com Landing Page
+# Welcome to Remix!
 
-Created using React with Tailwind CSS.
+- [Remix Docs](https://remix.run/docs)
 
-First Tailwind project. This was created for two reasons. Both to have a starting portfolio page (somewhat) and to also use this as a way to learn how to use Tailwind CSS
+## Deployment
 
-So far its been great and enjoyable to learn I higly suggest it.
+After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
 
-https://tailwindcss.com/
+If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
 
-I learned it using the following course which I highly recommend
+```sh
+npm i -g vercel
+vercel
+```
 
-https://coderstape.com/series/13-learn-tailwind-css-from-scratch
+It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
 
-Progression:
+## Development
 
-![Website Progression](https://raw.githubusercontent.com/moishinetzer/mnetzer.com/main/webiste%20progression.png)
+To run your Remix app locally, make sure your project's local dependencies are installed:
+
+```sh
+npm install
+```
+
+Afterwards, start the Remix development server like so:
+
+```sh
+npm run dev
+```
+
+Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+
+If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
